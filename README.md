@@ -1,7 +1,7 @@
 # Tic-Tac-Toe Angular
 
 This is a simple Tic-Tac-Toe created with Angular 1 and Bootsrap.
-
+Check it out here: [Tic-Tac-Toe](https://petarstanev.github.io/Tic-Tac-Toe-Angular/)
 ## Built With
 
 * [Angular 1](https://angularjs.org/) - JavaScript MVW Framework
