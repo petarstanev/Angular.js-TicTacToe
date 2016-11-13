@@ -3,6 +3,12 @@
   font-size: 36px;
 }
 
-.test{
-  background-color: blue;
+
+
+.mPlayer1{
+    background-color: lightblue;
+}
+
+.mPlayer2{
+    background-color: lightyellow;
 }

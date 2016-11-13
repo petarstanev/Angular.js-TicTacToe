@@ -16,16 +16,19 @@
 
 <body ng-app="app" ng-controller="mainController">
   <div id="container">
-    <div class="row">
-      <div id="grid" class="col-xs-12 col-sm-4 col-sm-offset-5">
-        <div ng-repeat="cell in cells" class="cell col-xs-4" ng-click="cellClicked(cell.id)">
-          {{cell.text}}
-        </div>
-        <div id="Emessage" ng-class="messageClass">
-          {{message}}
-        </div>
+<div id="game" class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div id="grid"  class="row">
+      <div ng-repeat="cell in cells" class="cell col-xs-4" ng-click="cellClicked(cell.id)">
+        {{cell.text}}
       </div>
     </div>
+
+    <div id="Emessage" ng-class="messageClass" class="row" >
+      {{message}}
+    </div>
+</div>
+
+
   </div>
 </body>
 

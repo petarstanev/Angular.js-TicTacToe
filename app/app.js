@@ -37,8 +37,12 @@ angular.module('app', [])
             if (draw) {
                 $scope.message = "Draw";
             } else {
-                $scope.message = "Palyer " + playerId + " wins !";
-                $scope.messageClass = "test";
+                $scope.message = "Player " + playerId + " wins !";
+                if (playerId === 1) {
+                    $scope.messageClass = "message mPlayer1";
+                } else {
+                    $scope.messageClass = "message mPlayer2";
+                }
             }
         }
 
