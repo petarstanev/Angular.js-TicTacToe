@@ -1,10 +1,18 @@
+
+body{
+    font-family: 'Droid Sans', sans-serif;
+}
+
 #grid {
   padding-top: 50px;
   font-size: 36px;
+  text-align: center;
 }
 
-
-
+#message{
+    font-size: 36px;
+    text-align: center;
+}
 .mPlayer1{
     background-color: lightblue;
 }
@@ -12,3 +20,4 @@
 .mPlayer2{
     background-color: lightyellow;
 }
+

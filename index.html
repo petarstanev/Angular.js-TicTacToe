@@ -7,7 +7,7 @@
   <title>Tic tac toe Angular</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
@@ -16,17 +16,17 @@
 
 <body ng-app="app" ng-controller="mainController">
   <div id="container">
-<div id="game" class="col-xs-12 col-sm-4 col-sm-offset-4">
-    <div id="grid"  class="row">
-      <div ng-repeat="cell in cells" class="cell col-xs-4" ng-click="cellClicked(cell.id)">
-        {{cell.text}}
-      </div>
-    </div>
+    <div id="game" class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div id="grid" class="row">
+        <div ng-repeat="cell in cells" class="cell col-xs-4" ng-click="cellClicked(cell.id)">
+          {{cell.text}}
+        </div>
+      </div><!-- grid -->
 
-    <div id="Emessage" ng-class="messageClass" class="row" >
-      {{message}}
-    </div>
-</div>
+      <div id="message" ng-class="messageClass" class="row">
+        {{message}}
+      </div><!-- message -->
+    </div><!-- game -->
 
 
   </div>
