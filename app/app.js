@@ -2,6 +2,7 @@ angular.module('app', [])
     .controller('mainController', function ($scope) {
         var cells = [];
         var playerId = 1;
+        var gameOver = false;
 
         $scope.greeting = "Hello World";
         createCells();
@@ -20,13 +21,19 @@ angular.module('app', [])
         }
 
         function playerClick(cellId) {
-            if (playerId === 1) {
-                cells[cellId].text = "X";
-                cells[cellId].playerId = 1;
-            } else {
-                cells[cellId].text = "0";
-                cells[cellId].playerId = 2;
+            if(cells[cellId].playerId === 0 && !gameOver ){
+                cellUpdate(cellId);
             }
+        }
+
+        function cellUpdate(cellId){
+            if (playerId === 1) {                
+                updatedCell = { id: cellId, text: "X", playerId: 1 };
+            } else {
+                updatedCell = { id: cellId, text: "O", playerId: 2 };
+            }
+            cells[cellId] = updatedCell;
+            
             if (checkForWin()) {
                 endGame(false);
             }
@@ -44,6 +51,7 @@ angular.module('app', [])
                     $scope.messageClass = "mPlayer2";
                 }
             }
+            gameOver = true;
         }
 
         function changePlayer() {
