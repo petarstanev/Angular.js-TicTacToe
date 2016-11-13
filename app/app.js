@@ -39,9 +39,9 @@ angular.module('app', [])
             } else {
                 $scope.message = "Player " + playerId + " wins !";
                 if (playerId === 1) {
-                    $scope.messageClass = "message mPlayer1";
+                    $scope.messageClass = "mPlayer1";
                 } else {
-                    $scope.messageClass = "message mPlayer2";
+                    $scope.messageClass = "mPlayer2";
                 }
             }
         }
@@ -55,7 +55,7 @@ angular.module('app', [])
         }
 
         function checkForWin() {
-            if (checkDiagonals()) {
+            if (checkDiagonals()) {                
                 return true;
             } else {
                 for (var i = 0; i < 3; i++) {
@@ -71,11 +71,15 @@ angular.module('app', [])
         }
 
         function checkDiagonals() {
-            if (cells[0].playerId === playerId && cells[8].playerId === playerId) {
-                return true;
-            }
-            if (cells[2].playerId === playerId && cells[6].playerId === playerId) {
-                return true;
+            if(cells[4].playerId === playerId){
+                if (cells[0].playerId === playerId && cells[8].playerId === playerId) {
+                    console.log("test");
+                    return true;                
+                }
+                if (cells[2].playerId === playerId && cells[6].playerId === playerId) {
+                    
+                    return true;
+                }
             }
             return false;
         }
