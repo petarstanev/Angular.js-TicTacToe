@@ -72,12 +72,10 @@ angular.module('app', [])
 
         function checkDiagonals() {
             if(cells[4].playerId === playerId){
-                if (cells[0].playerId === playerId && cells[8].playerId === playerId) {
-                    console.log("test");
+                if (cells[0].playerId === playerId && cells[8].playerId === playerId) {                    
                     return true;                
                 }
-                if (cells[2].playerId === playerId && cells[6].playerId === playerId) {
-                    
+                if (cells[2].playerId === playerId && cells[6].playerId === playerId) {                    
                     return true;
                 }
             }
