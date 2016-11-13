@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Tic tac toe Angular</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -15,14 +15,17 @@
 </head>
 
 <body ng-app="app" ng-controller="mainController">
-  <div class="container">
-    <div id="game" ng-repeat="cell in cells" class="col-xs-4">
-      <div ng-click="cellClicked(cell.id)">{{cell.text}}</div>
+  <div id="container">
+    <div class="row">
+      <div id="grid" class="col-xs-12 col-sm-4 col-sm-offset-5">
+        <div ng-repeat="cell in cells" class="cell col-xs-4" ng-click="cellClicked(cell.id)">
+          {{cell.text}}
+        </div>
+        <div id="Emessage" ng-class="messageClass">
+          {{message}}
+        </div>
+      </div>
     </div>
-    <div id="Emessage" ng-class="messageClass">
-      {{message}}
-    </div>
-
   </div>
 </body>
 
