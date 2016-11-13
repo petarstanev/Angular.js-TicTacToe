@@ -21,28 +21,46 @@ angular.module('app', [])
         }
 
         function playerClick(cellId) {
-            if(cells[cellId].playerId === 0 && !gameOver ){
+            if (cells[cellId].playerId === 0 && !gameOver) {
                 cellUpdate(cellId);
             }
         }
 
-        function cellUpdate(cellId){
-            if (playerId === 1) {                
+        function cellUpdate(cellId) {
+            if (playerId === 1) {
                 updatedCell = { id: cellId, text: "X", playerId: 1 };
             } else {
                 updatedCell = { id: cellId, text: "O", playerId: 2 };
             }
             cells[cellId] = updatedCell;
-            
+
             if (checkForWin()) {
                 endGame(false);
+            } else if (checkDraw()) {
+                endGame(true);
             }
             changePlayer();
+        }
+
+        function checkDraw() {
+            var countEmptyCells = 0;
+            for (var i = 0; i < cells.length; i++) {
+                if (cells[i].playerId != 0) {
+                    countEmptyCells++;
+                }
+            }
+
+            if (cells.length === countEmptyCells) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         function endGame(draw) {
             if (draw) {
                 $scope.message = "Draw";
+                $scope.messageClass = "mDraw";
             } else {
                 $scope.message = "Player " + playerId + " wins !";
                 if (playerId === 1) {
@@ -63,7 +81,7 @@ angular.module('app', [])
         }
 
         function checkForWin() {
-            if (checkDiagonals()) {                
+            if (checkDiagonals()) {
                 return true;
             } else {
                 for (var i = 0; i < 3; i++) {
@@ -79,11 +97,11 @@ angular.module('app', [])
         }
 
         function checkDiagonals() {
-            if(cells[4].playerId === playerId){
-                if (cells[0].playerId === playerId && cells[8].playerId === playerId) {                    
-                    return true;                
+            if (cells[4].playerId === playerId) {
+                if (cells[0].playerId === playerId && cells[8].playerId === playerId) {
+                    return true;
                 }
-                if (cells[2].playerId === playerId && cells[6].playerId === playerId) {                    
+                if (cells[2].playerId === playerId && cells[6].playerId === playerId) {
                     return true;
                 }
             }
