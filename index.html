@@ -9,16 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
   <script type="text/javascript" src="app/app.js"></script>
 </head>
 
 <body ng-app="app" ng-controller="mainController">
-  <div id="container">
+  <div id="container">    
     <div id="game" class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div id="grid" class="row">
-        <div ng-repeat="cell in cells" class="cell col-xs-4" ng-click="cellClicked(cell.id)">
+        <div ng-repeat="cell in cells" class="cell col-xs-4 " ng-click="cellClicked(cell.id)">
           {{cell.text}}
         </div>
       </div><!-- grid -->
@@ -27,8 +28,6 @@
         {{message}}
       </div><!-- message -->
     </div><!-- game -->
-
-
   </div>
 </body>
 
