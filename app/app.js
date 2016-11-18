@@ -15,7 +15,7 @@ angular.module('app', [])
 
         function createCells() {
             for (var i = 0; i < 9; i++) {
-                myCell = { id: i, text: "fa-cog", playerId: 0 };
+                myCell = { id: i, text: "fa-cog cellHide", playerId: 0 };
                 cells[i] = myCell;
             }
         }

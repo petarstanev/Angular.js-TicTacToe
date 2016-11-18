@@ -5,14 +5,17 @@ body{
 #game{
     padding-top: 20px;
 }
-#grid {  
-  font-size: 36px;
-  text-align: center;
-}
+
 
 .cell{
     border-style: groove;
-      border-width: 1px;
+    border-width: 1px;
+    font-size: 30vw;
+    text-align: center;
+}
+
+.cellHide {
+    color: white;
 }
 
 #message{
@@ -30,3 +33,4 @@ body{
 .mDraw{
     background: lightpink;
 }
+
