@@ -6,11 +6,10 @@ body{
     padding-top: 20px;
 }
 
-
 .cell{
     border-style: groove;
     border-width: 1px;
-    font-size: 30vw;
+    font-size: 29vw;
     text-align: center;
 }
 
