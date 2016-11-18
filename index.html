@@ -19,8 +19,7 @@
   <div id="container">    
     <div id="game" class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div id="grid" class="row">
-        <div ng-repeat="cell in cells" class="cell col-xs-4 " ng-click="cellClicked(cell.id)">
-          {{cell.text}}
+        <div ng-repeat="cell in cells" class="cell col-xs-4 fa" ng-class="cell.text" ng-click="cellClicked(cell.id)">
         </div>
       </div><!-- grid -->
 

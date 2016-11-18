@@ -15,7 +15,7 @@ angular.module('app', [])
 
         function createCells() {
             for (var i = 0; i < 9; i++) {
-                myCell = { id: i, text: "_", playerId: 0 };
+                myCell = { id: i, text: "fa-cog", playerId: 0 };
                 cells[i] = myCell;
             }
         }
@@ -28,9 +28,9 @@ angular.module('app', [])
 
         function cellUpdate(cellId) {
             if (playerId === 1) {
-                updatedCell = { id: cellId, text: "X", playerId: 1 };
+                updatedCell = { id: cellId, text: "fa-times", playerId: 1 };
             } else {
-                updatedCell = { id: cellId, text: "O", playerId: 2 };
+                updatedCell = { id: cellId, text: "fa-circle-o", playerId: 2 };
             }
             cells[cellId] = updatedCell;
 
