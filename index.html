@@ -26,13 +26,13 @@
     </div>
     <!-- grid -->
 
-    <div id="message" ng-class="messageClass" class="row">
-      {{message}}
+    <div id="resultMessage" ng-class="resultMessageClass" class="row text-center">
+      {{resultMessage}}
     </div>
     <!-- message -->
 
-    <div id="newGame" ng-hide="!gameOver" class="row">
-      <button type="button" class="btn btn-lg btn-warning col-xs-12" ng-click="resetGame()">New Game</button>
+    <div id="newGame" class="row">
+      <div ng-class="buttonClass" ng-click="resetGame()">{{buttonText}}</div>
     </div>
     <!-- new game -->
 

@@ -10,6 +10,7 @@ angular.module('app', [])
 
         $scope.greeting = "Hello World";
         createCells();
+        changeButton();
         $scope.cells = cells;
 
         $scope.cellClicked = function (id) {
@@ -17,10 +18,13 @@ angular.module('app', [])
         }
        
         $scope.resetGame = function(){
-            $scope.gameOver = false;
-            $scope.message = "";
-            $scope.messageClass = "";
-            createCells()
+            if(gameOver){
+                $scope.gameOver = false;
+                $scope.resultMessage = "";
+                $scope.resultMessageClass = "";
+                createCells();
+                changeButton();
+            }
         }
 
         function createCells() {
@@ -38,7 +42,7 @@ angular.module('app', [])
 
         function cellUpdate(cellId) {
             if (playerId === 1) {
-                updatedCell = { id: cellId, text: "fa-times", playerId: 1 };
+                updatedCell = { id: cellId, text: "fa-times", playerId: 1 };                
             } else {
                 updatedCell = { id: cellId, text: "fa-circle-o", playerId: 2 };
             }
@@ -49,7 +53,8 @@ angular.module('app', [])
             } else if (checkDraw()) {
                 endGame(true);
             }
-            changePlayer();
+            changePlayer();            
+            changeButton();
         }
 
         function checkDraw() {
@@ -69,20 +74,25 @@ angular.module('app', [])
 
         function endGame(draw) {
             if (draw) {
-                $scope.message = "Draw";
-                $scope.messageClass = "mDraw";
+                $scope.resultMessage = "Draw";
+                $scope.resultMessageClass = "mDraw";                
                 $scope.drawScore++;
             } else {
-                $scope.message = "Player " + playerId + " wins !";
+                $scope.resultMessage = "Player " + playerId + " wins !";
                 if (playerId === 1) {
-                    $scope.messageClass = "mPlayer1";
+                    $scope.resultMessageClass = "mPlayer1";
                     $scope.playerOneScore++;
                 } else {
-                    $scope.messageClass = "mPlayer2";
+                    $scope.resultMessageClass = "mPlayer2";
                     $scope.playerTwoScore++;
                 }
-            }
+            }            
             $scope.gameOver = true;
+        }
+
+        function updateButtonInfo(buttonText, buttonClass){
+            $scope.buttonClass =  buttonClass;
+            $scope.buttonText =  buttonText;
         }
 
         function changePlayer() {
@@ -90,6 +100,19 @@ angular.module('app', [])
                 playerId = 2;
             } else {
                 playerId = 1;
+            }
+        }
+
+        function changeButton(){
+          
+            if($scope.gameOver){
+                updateButtonInfo("New game","btn btn-lg btn-block btn-warning");
+            }else{
+                if (playerId === 1) {
+                    updateButtonInfo("Player 2 turn.","text-center btn-lg btn-block btn-info");
+                } else {
+                    updateButtonInfo("Player 1 turn.","text-center btn-lg btn-block btn-info");
+                }
             }
         }
 
