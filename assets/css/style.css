@@ -1,10 +1,12 @@
 
+html, body {
+  overflow-x: hidden;
+}
+
 body{
     font-family: 'Droid Sans', sans-serif;
 }
-#game{
-    padding-top: 20px;
-}
+
 
 .cell{
     border-style: groove;
@@ -14,8 +16,10 @@ body{
 }
 
 .cellHide {
-    color: white;
+    color: transparent; 
 }
+
+
 
 #message{
     font-size: 36px;
@@ -33,3 +37,7 @@ body{
     background: lightpink;
 }
 
+h1 {
+  font-size: 8.9vw;
+  margin: 10px 0;
+}

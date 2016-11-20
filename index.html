@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Tic tac toe Angular</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,18 +16,20 @@
 </head>
 
 <body ng-app="app" ng-controller="mainController">
-  <div id="container">    
-    <div id="game" class="col-xs-12 col-sm-10 col-md-12  ">
-      <div id="grid" class="row">
-        <div ng-repeat="cell in cells" class="cell col-xs-4 fa" ng-class="cell.text"  ng-click="cellClicked(cell.id)">
-        </div>
-      </div><!-- grid -->
-
-      <div id="message" ng-class="messageClass" class="row">
-        {{message}}
-      </div><!-- message -->
+  <div id="game" class="container">   
+      <div id="header" class="row bg-primary text-center">
+        <h1>Tic tac toe in Angular</h1>
+      </div>
+      
+        <div id="grid" class="row">
+          <div ng-repeat="cell in cells" class="cell col-xs-4 fa" ng-class="cell.text" ng-click="cellClicked(cell.id)"/>        
+        </div><!-- grid -->
+        
+        <div id="message" ng-class="messageClass" class="row">
+          {{message}}
+        </div><!-- message -->
+        
     </div><!-- game -->
-  </div>
 </body>
 
 </html>
