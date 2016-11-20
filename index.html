@@ -16,25 +16,44 @@
 </head>
 
 <body ng-app="app" ng-controller="mainController">
-  <div id="game" class="container">   
-      <div id="header" class="row bg-primary text-center">
-        <h1>Tic tac toe in Angular</h1>
-      </div>
-      
-        <div id="grid" class="row">
-          <div ng-repeat="cell in cells" class="cell col-xs-4 fa" ng-class="cell.text" ng-click="cellClicked(cell.id)"/>        
-        </div><!-- grid -->
-        
-        <div id="message" ng-class="messageClass" class="row">
-          {{message}}
-        </div><!-- message -->
+  <div id="game" class="container">
+    <div id="header" class="row bg-primary text-center">
+      <h1>Tic tac toe in Angular</h1>
+    </div>
 
-        <div id="newGame" ng-hide="!gameOver" class="row">
-          <button type="button" class="btn btn-lg btn-warning col-xs-12" ng-click="resetGame()">New Game</button>
-        </div><!-- new game -->
-        
-        
-    </div><!-- game -->
+    <div id="grid" class="row">
+      <div ng-repeat="cell in cells" class="cell col-xs-4 fa" ng-class="cell.text" ng-click="cellClicked(cell.id)" />
+    </div>
+    <!-- grid -->
+
+    <div id="message" ng-class="messageClass" class="row">
+      {{message}}
+    </div>
+    <!-- message -->
+
+    <div id="newGame" ng-hide="!gameOver" class="row">
+      <button type="button" class="btn btn-lg btn-warning col-xs-12" ng-click="resetGame()">New Game</button>
+    </div>
+    <!-- new game -->
+
+    <div id="stats" class="row">
+      <div id="statsPlayer1" class="col-xs-offset-1 col-xs-4 text-left">
+        <p  class="stats">Player 1</p>
+        <p  class="stats">Player 2</p>
+        <p  class="stats">Draw</p>
+      </div>
+      <div id="statsPlayer1score" class="col-xs-6 text-left">
+        <p class="stats">{{playerOneScore}}</p>
+        <p  class="stats">{{playerTwoScore}}</p>
+        <p  class="stats">{{drawScore}}</p>
+      </div>
+
+
+    </div>
+    <!-- new game -->
+
+  </div>
+  <!-- game -->
 </body>
 
 </html>

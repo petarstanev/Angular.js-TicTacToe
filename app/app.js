@@ -3,6 +3,10 @@ angular.module('app', [])
         var cells = [];
         var playerId = 1;
         $scope.gameOver = false;
+        $scope.playerOneScore = 0;
+        $scope.playerTwoScore = 0;
+        $scope.drawScore = 0;
+        
 
         $scope.greeting = "Hello World";
         createCells();
@@ -67,12 +71,15 @@ angular.module('app', [])
             if (draw) {
                 $scope.message = "Draw";
                 $scope.messageClass = "mDraw";
+                $scope.drawScore++;
             } else {
                 $scope.message = "Player " + playerId + " wins !";
                 if (playerId === 1) {
                     $scope.messageClass = "mPlayer1";
+                    $scope.playerOneScore++;
                 } else {
                     $scope.messageClass = "mPlayer2";
+                    $scope.playerTwoScore++;
                 }
             }
             $scope.gameOver = true;
