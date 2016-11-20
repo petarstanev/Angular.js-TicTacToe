@@ -18,7 +18,7 @@ angular.module('app', [])
         }
        
         $scope.resetGame = function(){
-            if(gameOver){
+            if($scope.gameOver){
                 $scope.gameOver = false;
                 $scope.resultMessage = "";
                 $scope.resultMessageClass = "";
@@ -80,10 +80,10 @@ angular.module('app', [])
             } else {
                 $scope.resultMessage = "Player " + playerId + " wins !";
                 if (playerId === 1) {
-                    $scope.resultMessageClass = "mPlayer1";
+                    $scope.resultMessageClass = "bg-info";
                     $scope.playerOneScore++;
                 } else {
-                    $scope.resultMessageClass = "mPlayer2";
+                    $scope.resultMessageClass = "bg-success";
                     $scope.playerTwoScore++;
                 }
             }            
@@ -106,12 +106,12 @@ angular.module('app', [])
         function changeButton(){
           
             if($scope.gameOver){
-                updateButtonInfo("New game","btn btn-lg btn-block btn-warning");
+                updateButtonInfo("New game","text-center btn-block btn-warning");
             }else{
                 if (playerId === 1) {
-                    updateButtonInfo("Player 2 turn.","text-center btn-lg btn-block btn-info");
+                    updateButtonInfo("Player 2 turn.","text-center btn-block btn-info");
                 } else {
-                    updateButtonInfo("Player 1 turn.","text-center btn-lg btn-block btn-info");
+                    updateButtonInfo("Player 1 turn.","text-center btn-block btn-info");
                 }
             }
         }

@@ -22,30 +22,33 @@
     </div>
 
     <div id="grid" class="row">
-      <div ng-repeat="cell in cells" class="cell col-xs-4 fa" ng-class="cell.text" ng-click="cellClicked(cell.id)" />
+      <div ng-repeat="cell in cells" class="cell col-xs-4 fa" ng-class="cell.text" ng-click="cellClicked(cell.id)"></div>
     </div>
     <!-- grid -->
 
-    <div id="resultMessage" ng-class="resultMessageClass" class="row text-center">
-      {{resultMessage}}
-    </div>
-    <!-- message -->
-
     <div id="newGame" class="row">
-      <div ng-class="buttonClass" ng-click="resetGame()">{{buttonText}}</div>
+      <div id="buttonNewGame" ng-class="buttonClass" ng-click="resetGame()">{{buttonText}}</div>
     </div>
     <!-- new game -->
 
     <div id="stats" class="row">
       <div id="statsPlayer1" class="col-xs-offset-1 col-xs-4 text-left">
-        <p  class="stats">Player 1</p>
-        <p  class="stats">Player 2</p>
-        <p  class="stats">Draw</p>
+        <p class="stats">Player 1</p>
+        <p class="stats">Player 2</p>
+        <p class="stats">Draw</p>
       </div>
       <div id="statsPlayer1score" class="col-xs-6 text-left">
         <p class="stats">{{playerOneScore}}</p>
-        <p  class="stats">{{playerTwoScore}}</p>
-        <p  class="stats">{{drawScore}}</p>
+        <p class="stats">{{playerTwoScore}}</p>
+        <p class="stats">{{drawScore}}</p>
+      </div>
+
+      <div id="resultMessage" ng-class="resultMessageClass" class="row text-center">
+        {{resultMessage}}
+      </div>
+      <!-- message -->
+      <div id="footer" class="text-primary text-center">
+        Created by <a class="" href="https://github.com/petarstanev">Petar Stanev</a> 2016.
       </div>
 
 
