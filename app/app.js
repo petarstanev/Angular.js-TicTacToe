@@ -2,7 +2,7 @@ angular.module('app', [])
     .controller('mainController', function ($scope) {
         var cells = [];
         var playerId = 1;
-        var gameOver = false;
+        $scope.gameOver = false;
 
         $scope.greeting = "Hello World";
         createCells();
@@ -11,7 +11,13 @@ angular.module('app', [])
         $scope.cellClicked = function (id) {
             playerClick(id);
         }
-
+       
+        $scope.resetGame = function(){
+            $scope.gameOver = false;
+            $scope.message = "";
+            $scope.messageClass = "";
+            createCells()
+        }
 
         function createCells() {
             for (var i = 0; i < 9; i++) {
@@ -21,7 +27,7 @@ angular.module('app', [])
         }
 
         function playerClick(cellId) {
-            if (cells[cellId].playerId === 0 && !gameOver) {
+            if (cells[cellId].playerId === 0 && !$scope.gameOver) {
                 cellUpdate(cellId);
             }
         }
@@ -69,7 +75,7 @@ angular.module('app', [])
                     $scope.messageClass = "mPlayer2";
                 }
             }
-            gameOver = true;
+            $scope.gameOver = true;
         }
 
         function changePlayer() {
@@ -123,4 +129,5 @@ angular.module('app', [])
             return false;
         }
 
-    });
+
+});
