@@ -2,6 +2,7 @@
 
 This is a simple Tic-Tac-Toe created with Angular 1 and Bootsrap.
 Check it out here: [Tic-Tac-Toe](https://goo.gl/x9yBHU)
+or here : (https://petarstanev.github.io/Angular.js-TicTacToe/)
 ## Built With
 
 * [Angular 1](https://angularjs.org/) - JavaScript MVW Framework
@@ -21,3 +22,6 @@ Clone the project and start index.html.
 ## Author
 
 Petar Stanev - [github.com/petarstanev](https://github.com/petarstanev/)
+
+
+
